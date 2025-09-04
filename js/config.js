@@ -1,5 +1,27 @@
+// 全局常量配置
+const PROXY_URL = '/proxy/';    // 适用于 Cloudflare, Netlify (带重写), Vercel (带重写)
+// const HOPLAYER_URL = 'https://hoplayer.com/index.html';
+const SEARCH_HISTORY_KEY = 'videoSearchHistory';
+const MAX_HISTORY_ITEMS = 5;
+
+// 密码保护配置
+// 注意：PASSWORD 环境变量是必需的，所有部署都必须设置密码以确保安全
+const PASSWORD_CONFIG = {
+    localStorageKey: 'passwordVerified',  // 存储验证状态的键名
+    verificationTTL: 90 * 24 * 60 * 60 * 1000  // 验证有效期（90天，约3个月）
+};
+
+// 网站信息配置
+const SITE_CONFIG = {
+    name: 'LibreTV',
+    url: 'https://libretv.is-an.org',
+    description: '免费在线视频搜索与观看平台',
+    logo: 'image/logo.png',
+    version: '1.0.3'
+};
+
 // API站点配置
-const API_SITES = {
+const API_SITES = {Expand commentComment on line R24Code has comments. Press enter to view.
     dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
         name: '电影天堂资源',
@@ -17,10 +39,19 @@ const API_SITES = {
         api: 'https://tyyszy.com/api.php/provide/vod',
         name: '天涯资源',
     },
+    xiaomaomi: {
+        api: 'https://zy.xmm.hk/api.php/provide/vod',
+        name: '小猫咪资源',
+    },
     ffzy: {
         api: 'http://ffzy5.tv/api.php/provide/vod',
         name: '非凡影视',
         detail: 'http://ffzy5.tv', 
+    },
+    heimuer: {
+        api: 'https://json.heimuer.xyz/api.php/provide/vod',
+        name: '黑木耳',
+        detail: 'https://heimuer.tv', 
     },
     zy360: {
         api: 'https://360zy.com/api.php/provide/vod',
